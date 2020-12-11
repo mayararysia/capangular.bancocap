@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Cadastrar Cliente</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" 
+            [(ngModel)]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF"  [(ngModel)]="cliente.cpf" name="cpf">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="criarCliente()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button routerLink="/">
+        Cancelar
+    </button>
+</mat-card>
