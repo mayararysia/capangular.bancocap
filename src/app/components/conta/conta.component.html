@@ -1,20 +1,26 @@
 <mat-card>
     <mat-card-title>Cadastrar Conta</mat-card-title>
-    <form>
+    <form >
         <mat-form-field>
             <input matInput placeholder="Hash" 
             [(ngModel)]="conta.hash" name="hash">
         </mat-form-field>
-         <mat-form-field> <!--OBS.: FAZER DROP-DOWN PARA SELECIONAR O cliente -->
-            <input matInput placeholder="Cliente" 
-             [(ngModel)]="conta.cliente.nome" name="cliente.nome">
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione um cliente</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food">
+                <mat-option *ngFor="let client of mock_clientes" [value]="client.nome">
+                    {{client.nome}}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
+        
         <mat-form-field>
             <input matInput placeholder="Saldo" 
             [(ngModel)]="conta.saldo" name="saldo">
         </mat-form-field>
     </form>
-
+    
     <button mat-raised-button (click)="criarConta()" color="primary">
         Salvar
     </button>
