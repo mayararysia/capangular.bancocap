@@ -22,13 +22,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-//import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-view.component';
+import { ContaViewComponent } from './components/conta/conta-view/conta-view.component';
+import { LoginComponent } from './components/login/login.component';
 
-// const maskConfig: Partial<IConfig> = {
-//   validation: false,
-// };
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-
     HomeComponent,
     ClienteComponent,
     ContaComponent,
-    ClienteViewComponent
+    ClienteViewComponent,
+    ContaViewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,8 +58,9 @@ import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatGridListModule,
     MatSelectModule,
-    //NgxMaskModule.forRoot(maskConfig),
+    NgxMaskModule.forRoot(maskConfig),
     MatGridListModule
   ],
   providers: [],

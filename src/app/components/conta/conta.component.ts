@@ -17,7 +17,8 @@ export class ContaComponent implements OnInit {
 
   selectedValue: string = '';
   exibirCadastro: boolean = false;
-  
+  submitted: boolean = false;
+
   conta: Conta ={
     hcode: '',
     cliente: {
@@ -43,7 +44,8 @@ export class ContaComponent implements OnInit {
   
   ngOnInit(): void { }
   
-  
+  onSubmit() { this.submitted = true; }
+
   criarConta(): void {
     this.encontrarClientePorNome(this.selectedValue)
     
@@ -55,9 +57,7 @@ export class ContaComponent implements OnInit {
     for (const client of this.mock_clientes) {
       if( client.nome == this.selectedValue ) {
         this.conta.cliente = client;
-
         this.hash = objectHash(this.conta)
-
         break
       }
     }
