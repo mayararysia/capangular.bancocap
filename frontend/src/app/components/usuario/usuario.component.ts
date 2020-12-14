@@ -15,7 +15,6 @@ export class UsuarioComponent implements OnInit {
   usuario: Usuario = {};
   submitted: boolean = false;
   emailValido: boolean = false;
-  teste: string = '';
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
@@ -32,7 +31,6 @@ export class UsuarioComponent implements OnInit {
   }
 
   cadastroUsuario(){
-    console.log(this.teste);
     this.loginService.inserirUsuario(this.usuario);
     alert("Sucesso no cadastro! Faça seu login...");
     this.router.navigate(['/']);
