@@ -11,7 +11,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "home",
     component: HomeComponent
   },
   {
@@ -31,7 +31,7 @@ const routes: Routes = [
     component: ContaViewComponent
   },
   {
-    path: "login",
+    path: "",
     component: LoginComponent
    },
    {

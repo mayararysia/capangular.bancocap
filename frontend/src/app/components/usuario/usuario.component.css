@@ -7,3 +7,7 @@ form {
 button {
     margin: 20px 15px 0px 0px;
 }
+
+.div-item-obrigatorio {
+    padding-top: 10px !important;
+}

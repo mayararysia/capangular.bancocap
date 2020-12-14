@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { Usuario } from 'src/app/model/usuario.model';
+import { Validators,FormControl } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -16,10 +17,20 @@ export class LoginComponent implements OnInit {
   usuarios: Usuario[];
   error:boolean = false;
   errorUsuarioInvalido: string = "";
+  submitted: boolean = false;
+
+  email = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(private loginService : LoginService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'Insira seu e-mail';
+    }
+    return this.email.hasError('email') ? 'Email não é válido' : '';
   }
 
   login(form: NgForm){
@@ -27,10 +38,11 @@ export class LoginComponent implements OnInit {
     this.loginService.listarUsuarios().subscribe(res => {
       
       usuario = this.loginService.validarUsuario(usuario, res)
-      usuario ? this.router.navigate(['/home']) : this.error = true, this.errorUsuarioInvalido = "usuário não encontrado";
-    }); 
+      usuario ? this.router.navigate(['/home']) : this.error = true, this.errorUsuarioInvalido = "Usuário não encontrado!";
+    });
   }
-
+  onSubmit() {
+    this.submitted = true;
+  }
   
-
 }

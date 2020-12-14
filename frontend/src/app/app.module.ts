@@ -10,7 +10,7 @@ import { HomeNavegacaoComponent } from './components/template/home-navegacao/hom
 import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-view.component';
 
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 
@@ -68,6 +68,7 @@ const maskConfig: Partial<IConfig> = {
     MatGridListModule,
     MatSelectModule,
     HttpClientModule,
+    ReactiveFormsModule,
     NgxMaskModule.forRoot(maskConfig),
   ],
   providers: [],

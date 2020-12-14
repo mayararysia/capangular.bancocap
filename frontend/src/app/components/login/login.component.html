@@ -1,11 +1,16 @@
 <mat-card>
     <mat-card-title>Login</mat-card-title>
     <form #form="ngForm" (ngSubmit)="login(form)" novalidate>
+       
         <mat-form-field>
-            <input matInput placeholder="Email" [(ngModel)]="usuario.email" name="email" #email="ngModel" ngModel required><br>
+            <input matInput placeholder="Email" type="email"
+            [(ngModel)]="usuario.email" name="email" #email="ngModel" 
+            ngModel required><br>
         </mat-form-field>
+
         <mat-form-field>
-            <input matInput placeholder="Senha" [(ngModel)]="usuario.senha" name="senha" #senha="ngModel" ngModel required><br>
+            <input matInput placeholder="Senha" type="password"
+            [(ngModel)]="usuario.senha" name="senha" #senha="ngModel" ngModel required><br>
         </mat-form-field>
         
         <button mat-raised-button type="submit" color="primary">
