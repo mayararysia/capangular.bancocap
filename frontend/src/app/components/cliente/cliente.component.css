@@ -10,10 +10,12 @@ button {
 
 .div-alerta {
     padding-bottom: 30px;
+    color:#e0120f;
 }
 
 .div-item-obrigatorio {
     padding-top: 10px !important;
+    color:#e0120f;
 }
 
 .ng-valid[required], .ng-valid.required  {

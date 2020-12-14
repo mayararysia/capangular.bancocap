@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <form #form="ngForm" (ngSubmit)="login(form)" novalidate>
+        <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="usuario.email" name="email" #email="ngModel" ngModel required><br>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="usuario.senha" name="senha" #senha="ngModel" ngModel required><br>
+        </mat-form-field>
+        
+        <button mat-raised-button type="submit" color="primary">
+            Logar
+        </button>
+        <p [hidden]="!error" class="alerta-erro"> {{ errorUsuarioInvalido}}</p>
+
+        <br>
+        <a mat-list-item routerLink="/usuario">
+            Cadastro Usuario
+        </a>
+        <a mat-list-item routerLink="/recuperarSenha">
+            Recuperar senha
+        </a>
+    </form>
+</mat-card>

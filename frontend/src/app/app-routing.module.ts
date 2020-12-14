@@ -6,6 +6,8 @@ import { ContaViewComponent } from './components/conta/conta-view/conta-view.com
 import { ContaComponent } from './components/conta/conta.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { recuperarSenhaComponent } from './components/recuperarSenha/recuperarSenha.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 const routes: Routes = [
   {
@@ -31,7 +33,15 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
-   }
+   },
+   {
+    path: "usuario",
+    component: UsuarioComponent
+  },
+  {
+    path: "recuperarSenha",
+    component: recuperarSenhaComponent
+  }
 ];
 
 @NgModule({

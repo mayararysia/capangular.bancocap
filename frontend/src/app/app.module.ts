@@ -9,6 +9,7 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeNavegacaoComponent } from './components/template/home-navegacao/home-navegacao.component';
 import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-view.component';
 
+
 import { FormsModule } from '@angular/forms';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -28,6 +29,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { ContaViewComponent } from './components/conta/conta-view/conta-view.component';
 import { LoginComponent } from './components/login/login.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { recuperarSenhaComponent } from './components/recuperarSenha/recuperarSenha.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -44,7 +48,10 @@ const maskConfig: Partial<IConfig> = {
     ContaComponent,
     ClienteViewComponent,
     ContaViewComponent,
-    LoginComponent
+    LoginComponent,
+    LoginComponent,
+    UsuarioComponent,
+    recuperarSenhaComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +67,7 @@ const maskConfig: Partial<IConfig> = {
     MatButtonModule,
     MatGridListModule,
     MatSelectModule,
+    HttpClientModule,
     NgxMaskModule.forRoot(maskConfig),
   ],
   providers: [],

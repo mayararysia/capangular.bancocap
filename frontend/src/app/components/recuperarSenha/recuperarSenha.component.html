@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>Recuperar senha</mat-card-title>
+    <form #form="ngForm" (ngSubmit)="recuperarSenha(form)" novalidate>
+        <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="usuario.email" name="email" #email="ngModel" ngModel required><br>
+        </mat-form-field>
+        
+        <button mat-raised-button type="submit" color="primary">
+            Enviar
+        </button>
+    </form>
+
+    <button mat-raised-button routerLink="/login">
+        Cancelar
+    </button>
+</mat-card>

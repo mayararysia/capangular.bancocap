@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Cliente } from 'src/app/model/cliente.model';
 import { Conta } from 'src/app/model/conta.model';
+import * as objectHash from 'object-hash';
 
 @Component({
   selector: 'app-conta',
@@ -13,6 +14,7 @@ export class ContaComponent implements OnInit {
   selectedValue: string = '';
   exibirCadastro: boolean = false;
   submitted: boolean = false;
+  hash: any;
 
   conta: Conta ={
     hash: '',
@@ -41,7 +43,7 @@ export class ContaComponent implements OnInit {
   criarConta(): void {
     alert("Conta criada com sucesso!");
     this.encontrarClientePorNome(this.selectedValue)
-    // this.conta.hash = hash.sh1(this.conta.hash);
+    this.conta.hash = this.hash;
     console.log(this.conta);
   }
 
@@ -49,7 +51,8 @@ export class ContaComponent implements OnInit {
     for (const client of this.mock_clientes) {
       if( client.nome == this.selectedValue ) {
         this.conta.cliente = client;
-        break
+        this.hash = objectHash(this.conta);
+        break;
       }
     }
   }

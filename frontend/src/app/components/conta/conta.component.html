@@ -2,12 +2,13 @@
     <mat-card-title>Cadastrar Conta</mat-card-title>
     <form (ngSubmit)="onSubmit()" #contaForm="ngForm">
         <mat-form-field>
-            <input matInput placeholder="Hash" type="password"
-            required
-            [(ngModel)]="conta.hash" name="hash" #conta="ngModel" id="conta">
-            <div [hidden]="conta.valid || conta.pristine" class="alert alert-danger div-item-obrigatorio">
-                Código da conta é obrigatório!
-            </div>
+            <input id="hcode" name="hcode" type="text"
+                required
+                matInput placeholder="Hash" disabled="false"
+                [(ngModel)]="hash" #hcode="ngModel" >
+                <!-- <div [hidden]="conta.valid || conta.pristine" class="alert alert-danger div-item-obrigatorio">
+                    Código da conta é obrigatório!
+                </div> -->
         </mat-form-field>
          <mat-form-field appearance="fill">
             <mat-label>Selecione um cliente</mat-label>
