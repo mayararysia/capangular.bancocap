@@ -58,6 +58,7 @@ export class ContaComponent implements OnInit {
       if( client.nome == this.selectedValue ) {
         this.conta.cliente = client;
         this.hash = objectHash(this.conta)
+        this.conta.hcode = this.hash;
         break
       }
     }
