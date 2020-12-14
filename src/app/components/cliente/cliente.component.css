@@ -7,3 +7,20 @@ form {
 button {
     margin: 20px 15px 0px 0px;
 }
+
+.div-alerta {
+    padding-bottom: 30px;
+}
+
+.div-item-obrigatorio {
+    padding-top: 10px !important;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #2046c0 !important; /* blue */
+}
+
+.ng-invalid:not(form)  {
+    border-left: 5px solid #e0120f !important; /* red */
+}
+

@@ -7,8 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeNavegacaoComponent } from './components/template/home-navegacao/home-navegacao.component';
+import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-view.component';
 
 import { FormsModule } from '@angular/forms';
+
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 //imports do Material Design
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -21,6 +24,14 @@ import { ContaComponent } from './components/conta/conta.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSelectModule } from '@angular/material/select';
+import { ContaViewComponent } from './components/conta/conta-view/conta-view.component';
+import { LoginComponent } from './components/login/login.component';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -30,7 +41,10 @@ import { MatButtonModule } from '@angular/material/button';
     HomeNavegacaoComponent,
     HomeComponent,
     ClienteComponent,
-    ContaComponent
+    ContaComponent,
+    ClienteViewComponent,
+    ContaViewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +57,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule,
+    MatSelectModule,
+    NgxMaskModule.forRoot(maskConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

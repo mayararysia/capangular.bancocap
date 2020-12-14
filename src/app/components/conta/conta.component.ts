@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Cliente } from 'src/app/model/cliente.model';
 import { Conta } from 'src/app/model/conta.model';
 
@@ -8,11 +9,16 @@ import { Conta } from 'src/app/model/conta.model';
   styleUrls: ['./conta.component.css']
 })
 export class ContaComponent implements OnInit {
-  
+
+  selectedValue: string = '';
+  exibirCadastro: boolean = false;
+  submitted: boolean = false;
+
   conta: Conta ={
     hash: '',
     cliente: {
-      cpf: '', nome: ''
+      cpf: '', 
+      nome: ''
     },
     saldo: 0.0
   }
@@ -30,9 +36,22 @@ export class ContaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() { this.submitted = true; }
+
   criarConta(): void {
     alert("Conta criada com sucesso!");
+    this.encontrarClientePorNome(this.selectedValue)
+    // this.conta.hash = hash.sh1(this.conta.hash);
     console.log(this.conta);
+  }
+
+  encontrarClientePorNome(nome: string) {
+    for (const client of this.mock_clientes) {
+      if( client.nome == this.selectedValue ) {
+        this.conta.cliente = client;
+        break
+      }
+    }
   }
 
 }

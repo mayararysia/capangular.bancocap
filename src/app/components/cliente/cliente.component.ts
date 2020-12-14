@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Cliente } from 'src/app/model/cliente.model';
+import { ClienteViewComponent } from './cliente-view/cliente-view.component';
 
 @Component({
   selector: 'app-cliente',
@@ -8,6 +10,11 @@ import { Cliente } from 'src/app/model/cliente.model';
   
 })
 export class ClienteComponent implements OnInit {
+  
+  rotaNovoCliente:string = '/clientes-view';
+  submitted = false;
+
+  componenteView: ClienteViewComponent;
 
   cliente: Cliente = {
     nome: '',
@@ -20,8 +27,20 @@ export class ClienteComponent implements OnInit {
   }
 
   criarCliente(): void {
-    alert("Cliente criado com sucesso!");
+    alert("Cliente " 
+    +  this.cliente.nome.toString() 
+    + " cadastrado com sucesso!");
     console.log(this.cliente);
   }
+
+  onSubmit(form: NgForm) {
+    this.submitted = true;
+  } 
+
+  // onSubmit(form: NgForm) {
+  //   this.submitted = true;
+  //   alert("Cliente" +  form.name.toString() + "cadastrado com sucesso!");
+  //   console.log(this.cliente);
+  // } 
 
 }
