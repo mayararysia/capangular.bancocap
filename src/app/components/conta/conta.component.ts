@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/model/cliente.model';
 import { Conta } from 'src/app/model/conta.model';
 
+import * as objectHash from 'object-hash'
+
+// declare var require: any
 
 @Component({
   selector: 'app-conta',
@@ -9,12 +12,14 @@ import { Conta } from 'src/app/model/conta.model';
   styleUrls: ['./conta.component.css']
 })
 export class ContaComponent implements OnInit {
-  
+ 
+  hash: any;
+
   selectedValue: string = '';
   exibirCadastro: boolean = false;
   
   conta: Conta ={
-    hash: '',
+    hcode: '',
     cliente: {
       cpf: '', nome: ''
     },
@@ -43,12 +48,16 @@ export class ContaComponent implements OnInit {
     this.encontrarClientePorNome(this.selectedValue)
     
     console.log(this.conta);
+    console.log('hashCode: '+this.hash)
   }
   
   encontrarClientePorNome(nome: string) {
     for (const client of this.mock_clientes) {
       if( client.nome == this.selectedValue ) {
         this.conta.cliente = client;
+
+        this.hash = objectHash(this.conta)
+
         break
       }
     }

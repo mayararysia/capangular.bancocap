@@ -1,7 +1,7 @@
 import { Cliente } from "./cliente.model";
 
 export interface Conta {
-    hash?: string;
+    hcode?: string;
     cliente?: Cliente;
     saldo?: number;
 }

@@ -2,13 +2,13 @@
     <mat-card-title class="box">Cadastrar Conta</mat-card-title>
     <form >
         <mat-form-field>
-            <input matInput placeholder="Hash" 
-            [(ngModel)]="conta.hash" name="hash">
+            <input matInput placeholder="Hash" disabled="true"
+            [(ngModel)]="hash" name="hash" >
         </mat-form-field>
         
         <mat-form-field appearance="fill">
             <mat-label>Selecione um cliente</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="food">
+            <mat-select [(ngModel)]="selectedValue" name="selected">
                 <mat-option *ngFor="let client of mock_clientes" [value]="client.nome">
                     {{client.nome}}
                 </mat-option>
